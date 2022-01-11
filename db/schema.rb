@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_10_002150) do
+ActiveRecord::Schema.define(version: 2022_01_10_192341) do
 
   create_table "apps", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", limit: 100
     t.string "token", limit: 36
-    t.integer "chats_count"
+    t.integer "chats_count", default: 0
   end
 
 end

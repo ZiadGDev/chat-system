@@ -18,4 +18,11 @@ ActiveRecord::Schema.define(version: 2022_01_10_192341) do
     t.integer "chats_count", default: 0
   end
 
+  create_table "chats", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "number"
+    t.integer "messagesCount", default: 0
+    t.bigint "app_id"
+    t.index ["app_id"], name: "index_chats_on_app_id"
+  end
+
 end

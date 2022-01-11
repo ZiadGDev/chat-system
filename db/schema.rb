@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_10_192341) do
+ActiveRecord::Schema.define(version: 2022_01_11_165040) do
 
   create_table "apps", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", limit: 100
@@ -20,9 +20,16 @@ ActiveRecord::Schema.define(version: 2022_01_10_192341) do
 
   create_table "chats", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "number"
-    t.integer "messagesCount", default: 0
+    t.integer "messages_count", default: 0
     t.bigint "app_id"
     t.index ["app_id"], name: "index_chats_on_app_id"
+  end
+
+  create_table "messages", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "number"
+    t.text "body"
+    t.bigint "chat_id"
+    t.index ["chat_id"], name: "index_messages_on_chat_id"
   end
 
 end

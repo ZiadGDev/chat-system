@@ -9,6 +9,7 @@ class ChatsController < ApplicationController
         @chat = Chat.create(number: @app.chats_count)
         @app.chat << @chat
         @app.save
+        render json: @chat.number
     end
     def show
         @chat = Chat.joins(:app).where('app.token': params[:app_token], number: params[:number])[0]

@@ -10,6 +10,7 @@ class MessagesController < ApplicationController
         @message = Message.create(number: @chat.messages_count, body: params[:body])
         @chat.message << @message
         @chat.save
+        render json: @message.number
     end
     def show
         @message = Message.joins(:chat => :app).

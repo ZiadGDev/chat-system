@@ -13,10 +13,11 @@ default: &default
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: db
-  username: root
+  host: chat_db
+  username: chat_user
   password: <%= ENV["CHAT_DATABASE_PASSWORD"] %>
   socket: /var/run/mysqld/mysqld.sock
+  port: 3306
 
 development:
   <<: *default
@@ -52,4 +53,3 @@ test:
 production:
   <<: *default
   database: chat_production
-  username: chat

@@ -18,5 +18,3 @@ The system allows creating applications, adding chats to them, and adding messag
 * **POST /apps/{app_token}/chats/{chat_number}/messages** - Creates a new message under the mentioned chat
 * **GET /apps/{app_token}/chats/{chat_number}/messages/{number}** - Gets the message with the mentioned number under the mentioned chat number
 * **PUT /apps/{app_token}/chats/{chat_number}/messages/{number}?body={body}** - Updates the mentioned message with the new body
-
-**NOTE: Fill the env vars (CHAT_DATABASE_PASSWORD, MYSQL_ROOT_PASSWORD) with the password for MySql/root user in the docker-compose.yml file before running (sudo docker-compose up)**
